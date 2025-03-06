@@ -1,3 +1,15 @@
 <h1><%= @list.name %></h1>
 <br>
+<%= render 'bookmarks/form',  list: @list, bookmark: @bookmark %>
+<br>
 <%= link_to 'Back to Lists', lists_path %>
+<br>
+<ul>
+<% @bookmarks.each do |b| %>
+  <li>
+  <%= b.movie.title %> :
+  <%= b.comment %>
+  <%= link_to 'Delete', bookmark_path(b), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
+  </li>
+<% end %>
+</ul>
