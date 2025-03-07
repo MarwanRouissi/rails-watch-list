@@ -1,2 +1,5 @@
 <%#= render 'form', list: @list, bookmark: @bookmark %>
 <h1>bookmark / new</h1>
+<%= render 'form',  list: @list, bookmark: @bookmark %>
+<br>
+<%= link_to 'Cancel', list_path(@list) %>

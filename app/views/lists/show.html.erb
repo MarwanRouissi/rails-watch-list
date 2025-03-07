@@ -1,6 +1,6 @@
 <h1><%= @list.name %></h1>
-<br>
-<%= render 'bookmarks/form',  list: @list, bookmark: @bookmark %>
+
+<%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
 <br>
 <%= link_to 'Back to Lists', lists_path %>
 <br>
