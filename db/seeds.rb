@@ -20,7 +20,7 @@ puts 'Cleaning DB...'
 Movie.destroy_all
 
 puts 'Creating movies...'
-movies.first(10).each do |movie|
+movies.first(20).each do |movie|
   movie = {
     title: movie['title'],
     overview: movie['overview'],
