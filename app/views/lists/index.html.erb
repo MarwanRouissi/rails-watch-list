@@ -1,13 +1,21 @@
-<h1>My Lists</h1>
-<%# @lists.each do |list| %>
-<%#= link_to list.name, list_path(list) %>
-<%# end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/movie-background-collage.jpg);">
+  <div class="container">
+    <h1>Create your own lists of movies</h1>
+  </div>
+</div>
 
-<% @lists.each do |list| %>
+<div class="container">
+  <div class="d-flex justify-content-between my-3">
+    <h2>My Lists</h1>
+    <%= link_to 'Add a new list', new_list_path, class: "btn btn-gradient" %>
+  </div>
+  <div class="cards">
+    <% @lists.each do |list| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.image.key, height: 300, crop: :fill %>')">
-  <%= link_to list.name, list_path(list) %>
+    <%= link_to list.name, list_path(list) %>
     </div>
-<% end %>
-<br>
-<%= link_to 'Add a new list', new_list_path %>
-<br>
+    <% end %>
+  </div>
+  <br>
+  <%= link_to 'Add a new list', new_list_path %>
+</div>
